@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show Off Pain | Estudio de Tatuajes | San Sebastián de los Reyes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#141414;
+    --orange:#ff6b35;
+    --cream:#f2efe9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:#fff;color:var(--black);line-height:1.65;}
+  h1,h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--black);color:#fff;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1140px;margin:0 auto;}
+  .logo{font-family:'Anton',sans-serif;font-size:1.4rem;text-transform:uppercase;}
+  .logo span{color:var(--orange);}
+  nav ul{list-style:none;display:flex;gap:28px;}
+  nav ul a{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;opacity:.85;}
+  nav ul a:hover{opacity:1;color:var(--orange);}
+  .nav-cta{background:var(--orange);color:#fff;padding:9px 18px;font-weight:700;font-size:.8rem;text-transform:uppercase;}
+
+  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,20,20,.95) 5%,rgba(20,20,20,.55) 55%,rgba(20,20,20,.35) 100%);}
+  .hero-content{position:relative;z-index:2;padding:80px 24px 64px;max-width:1140px;margin:0 auto;width:100%;}
+  .hero-tag{display:inline-block;border:1px solid var(--orange);color:var(--orange);padding:6px 14px;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:.95;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--orange);}
+  .hero p{max-width:560px;font-size:1.08rem;opacity:.9;margin-bottom:30px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;transition:.2s;}
+  .btn-primary{background:var(--orange);color:#fff;}
+  .btn-primary:hover{background:#e2551f;}
+  .btn-outline{border:1px solid #fff;color:#fff;}
+  .btn-outline:hover{background:#fff;color:var(--black);}
+
+  .stats{background:var(--black);color:#fff;padding:36px 0;border-top:1px solid #2a2a2a;}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px;}
+  .stats b{display:block;font-family:'Anton',sans-serif;font-size:2.4rem;color:var(--orange);}
+  .stats span{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;opacity:.75;}
+
+  section{padding:90px 0;}
+  .section-tag{color:var(--orange);text-transform:uppercase;font-size:.75rem;letter-spacing:.15em;font-weight:700;margin-bottom:10px;display:block;}
+  .section-title{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px;}
+  .section-desc{max-width:600px;color:#555;margin-bottom:50px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ddd;}
+  .service-card{background:#fff;padding:38px 30px;}
+  .service-num{font-family:'Anton',sans-serif;color:var(--orange);font-size:1rem;margin-bottom:14px;}
+  .service-card h3{font-size:1.3rem;margin-bottom:10px;text-transform:uppercase;font-family:'Anton',sans-serif;font-weight:400;}
+  .service-card p{color:#555;font-size:.94rem;}
+
+  .gallery{background:var(--black);}
+  .gallery .section-tag,.gallery .section-title{color:#fff;}
+  .gallery .section-desc{color:#bbb;}
+  .gallery-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;}
+  .gallery-grid .tall{height:520px;}
+
+  .why{background:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .why-card h3{font-size:1.15rem;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;margin-bottom:8px;}
+  .why-card p{color:#666;font-size:.9rem;}
+
+  .steps{background:var(--cream);}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:step;}
+  .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--orange);opacity:.6;}
+  .step h3{font-size:1.05rem;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;margin:8px 0;}
+  .step p{color:#666;font-size:.88rem;}
+
+  .testimonials{background:#fff;}
+  .reviews-tag{display:block;font-size:.75rem;color:#999;margin-bottom:40px;font-style:italic;}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .test-card{background:var(--cream);padding:30px;border-left:3px solid var(--orange);}
+  .stars{color:var(--orange);margin-bottom:12px;letter-spacing:2px;}
+  .test-card p{font-size:.95rem;color:#444;margin-bottom:18px;font-style:italic;}
+  .test-name{font-weight:700;font-size:.88rem;}
+
+  .contact{background:var(--black);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+  .contact .section-tag,.contact h2{color:#fff;}
+  .contact .section-tag{color:var(--orange);}
+  .info-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid #2a2a2a;}
+  .info-row b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);margin-bottom:4px;}
+  .info-row span{color:#ddd;font-size:.95rem;}
+  .map-embed{overflow:hidden;height:100%;min-height:340px;}
+  .map-embed iframe{width:100%;height:100%;border:0;min-height:340px;}
+
+  footer{background:#0a0a0a;color:#888;padding:34px 0;text-align:center;font-size:.82rem;}
+  footer strong{color:#ccc;}
+
+  .wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:60;}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  @media(max-width:860px){
+    nav ul{display:none;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .steps-grid{grid-template-columns:repeat(2,1fr);}
+    .test-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .gallery-grid .tall{height:320px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Show Off <span>Pain</span></div>
+    <ul>
+      <li><a href="#servicios">Trabajos</a></li>
+      <li><a href="#nosotros">Estudio</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="nav-cta" href="https://wa.me/34695189856?text=Hola!%20He%20visto%20vuestra%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank">Escríbenos</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1605647533135-51b5906087d0?q=80&w=1600&auto=format&fit=crop" alt="Tatuaje detallado">
+  <div class="hero-content">
+    <span class="hero-tag">San Sebastián de los Reyes · Estudio de Tatuajes</span>
+    <h1>Arte que <em>llevas</em><br>puesto para siempre</h1>
+    <p>Tatuajes de autor en Sanse, con máxima higiene y un equipo que cuida cada detalle. Cristian y el equipo dan vida a tu idea con precisión y mucho cariño.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/34695189856?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20un%20tatuaje" target="_blank">Pide tu cita</a>
+      <a class="btn btn-outline" href="#servicios">Ver trabajos</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>4,9★</b><span>Valoración Google</span></div>
+    <div><b>123</b><span>Reseñas reales</span></div>
+    <div><b>100%</b><span>Máxima higiene</span></div>
+    <div><b>+8</b><span>Años de experiencia</span></div>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="section-tag">Qué hacemos</span>
+    <h2 class="section-title">Nuestro trabajo</h2>
+    <p class="section-desc">De la idea al diseño final, trabajamos contigo cada detalle para conseguir el resultado que tienes en mente.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-num">01</div><h3>Diseño personalizado</h3><p>Creamos el diseño desde cero a partir de tu idea.</p></div>
+    <div class="service-card"><div class="service-num">02</div><h3>Realismo</h3><p>Trabajos de detalle fino con acabado profesional.</p></div>
+    <div class="service-card"><div class="service-num">03</div><h3>Tatuajes de color</h3><p>Piezas de color vivo y duradero.</p></div>
+    <div class="service-card"><div class="service-num">04</div><h3>Cobertura</h3><p>Transformamos tatuajes antiguos en nuevas piezas.</p></div>
+    <div class="service-card"><div class="service-num">05</div><h3>Primera vez</h3><p>Te acompañamos con calma si es tu primer tatuaje.</p></div>
+    <div class="service-card"><div class="service-num">06</div><h3>Presupuesto gratuito</h3><p>Valoramos tu idea y te damos precio sin compromiso.</p></div>
+  </div>
+</section>
+
+<section class="gallery" id="nosotros">
+  <div class="wrap">
+    <span class="section-tag">Nuestro estudio</span>
+    <h2 class="section-title">Higiene y profesionalidad</h2>
+    <p class="section-desc">Un estudio en Sanse donde la limpieza y el detalle se cuidan al máximo en cada sesión.</p>
+    <div class="gallery-grid">
+      <img class="tall" src="https://images.unsplash.com/photo-1605647533135-51b5906087d0?q=80&w=1200&auto=format&fit=crop" alt="Trabajo de tatuaje">
+      <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?q=80&w=900&auto=format&fit=crop" alt="Detalle de tatuaje">
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="section-tag">Por qué elegirnos</span>
+    <h2 class="section-title">Confianza y detalle</h2>
+    <div class="why-grid">
+      <div class="why-card"><h3>Máxima higiene</h3><p>Cuidan la limpieza al 100% en cada sesión, sin excepciones.</p></div>
+      <div class="why-card"><h3>Diseño único</h3><p>Cada pieza se piensa contigo desde cero.</p></div>
+      <div class="why-card"><h3>Muy valorado</h3><p>4,9 sobre 5 en Google, con más de 120 reseñas reales.</p></div>
+      <div class="why-card"><h3>En Sanse</h3><p>Fácil acceso, sin desplazarte al centro de Madrid.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <span class="section-tag">Cómo empezar</span>
+    <h2 class="section-title">En 4 pasos</h2>
+    <div class="steps-grid">
+      <div class="step"><h3>Escríbenos</h3><p>Cuéntanos tu idea o mándanos una referencia.</p></div>
+      <div class="step"><h3>Diseñamos juntos</h3><p>Trabajamos el boceto hasta que sea perfecto.</p></div>
+      <div class="step"><h3>Reservamos cita</h3><p>Buscamos el día y hora que te venga bien.</p></div>
+      <div class="step"><h3>Tatuamos</h3><p>Con máxima higiene y mucho cuidado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="opiniones">
+  <div class="wrap">
+    <span class="section-tag">Opiniones</span>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <span class="reviews-tag">Reseñas de ejemplo · pendiente de reales</span>
+    <div class="test-grid">
+      <div class="test-card"><div class="stars">★★★★★</div><p>"Cristian es el mejor tatuador, ha conseguido plasmar un dibujo con mucho cariño y cuidado."</p><div class="test-name">— Bea M.</div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p>"Gran estudio, cuidan la higiene al 100% y hasta el último detalle."</p><div class="test-name">— Juan Pablo R.</div></div>
+      <div class="test-card"><div class="stars">★★★★★</div><p>"Líneas perfectas, gran nivel de detalle y un trato de 10."</p><div class="test-name">— Zaira M.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <span class="section-tag">Contacto</span>
+    <h2 class="section-title">Pide tu cita</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="info-row"><span>📍</span><div><b>Dirección</b><span>P.º de Guadalajara, 109, San Sebastián de los Reyes, Madrid</span></div></div>
+        <div class="info-row"><span>📞</span><div><b>Teléfono / WhatsApp</b><span>695 18 98 56</span></div></div>
+        <div class="info-row"><span>⭐</span><div><b>Valoración</b><span>4,9 sobre 5 · 123 reseñas en Google</span></div></div>
+        <div class="info-row"><span>🕐</span><div><b>Horario</b><span>Consultar disponibilidad por WhatsApp</span></div></div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Show+Off+Pain+P.+de+Guadalajara+109+San+Sebastian+de+los+Reyes&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Propuesta de diseño para <strong>Show Off Pain</strong> · demo, no es el sitio web oficial del negocio.</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34695189856?text=Hola!%20He%20visto%20vuestra%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3C3.9 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.6-8.6 8.6zm4.7-6.4c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.8-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.2-.2-.2-.5-.3z"/></svg>
+</a>
+
+</body>
+</html>
