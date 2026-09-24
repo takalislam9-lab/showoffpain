@@ -67,6 +67,12 @@
   .gallery-grid img{width:100%;height:100%;object-fit:cover;}
   .gallery-grid .tall{height:520px;}
 
+  .portfolio{background:var(--black);border-top:1px solid #2a2a2a;}
+  .portfolio .section-tag,.portfolio .section-title{color:#fff;}
+  .portfolio .section-desc{color:#bbb;}
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .portfolio-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+
   .why{background:#fff;}
   .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
   .why-card h3{font-size:1.15rem;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;margin-bottom:8px;}
@@ -122,6 +128,7 @@
     <div class="logo">Show Off <span>Pain</span></div>
     <ul>
       <li><a href="#servicios">Trabajos</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
       <li><a href="#nosotros">Estudio</a></li>
       <li><a href="#opiniones">Opiniones</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -165,6 +172,19 @@
     <div class="service-card"><div class="service-num">04</div><h3>Cobertura</h3><p>Transformamos tatuajes antiguos en nuevas piezas.</p></div>
     <div class="service-card"><div class="service-num">05</div><h3>Primera vez</h3><p>Te acompañamos con calma si es tu primer tatuaje.</p></div>
     <div class="service-card"><div class="service-num">06</div><h3>Presupuesto gratuito</h3><p>Valoramos tu idea y te damos precio sin compromiso.</p></div>
+  </div>
+</section>
+
+<section class="portfolio" id="portafolio">
+  <div class="wrap">
+    <span class="section-tag">Trabajo real</span>
+    <h2 class="section-title">Piel que cuenta historias</h2>
+    <p class="section-desc">Una muestra de piezas reales tatuadas en nuestro estudio, hechas con la misma dedicación que pondremos en la tuya.</p>
+    <div class="portfolio-grid">
+      <img src="portfolio-1.jpg" alt="Tatuaje realista en pierna">
+      <img src="portfolio-2.jpg" alt="Tatuaje de máscara oni en antebrazo">
+      <img src="portfolio-3.jpg" alt="Tatuaje realista en mano">
+    </div>
   </div>
 </section>
 
